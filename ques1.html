@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLOR</title>
+</head>
+<body>
+    <h1>Background Color</h1>
+    <div id="background" style="height: 600px;"></div>
+    <script>
+      var doc = document.getElementById("background");
+var color = ["black", "yellow", "brown", "green","red"];
+var i = 0;
+function change() {
+  doc.style.backgroundColor = color[i];
+  i++;
+  if(i > color.length - 1) {
+    i = 0;
+  }
+}
+setInterval(change, 5000);
+    </script>
+</body>
+</html>

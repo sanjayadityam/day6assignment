@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        welcome
+    </title>
+    <head>
+        <style>
+            body {
+              padding: 25px;
+              background-color: white;
+              color: black;
+              font-size: 25px;
+            }
+            
+            .dark-mode {
+              background-color: black;
+              color: white;
+            }
+            </style>
+    </head>
+<body>
+
+<h2>To Enter your Name</h2>
+
+<button onclick="myFunction()">Click Here</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var txt;
+  var person = prompt("Please enter your name:");
+  if (person == null || person == "") {
+    txt = "User cancelled the prompt.";
+  } else {
+    txt = "Welcome " + person + "!!!";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};
+  return i;
+}
+function darkmode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+<body onload="startTime()">
+ <div id="txt"></div>
+
+<button onclick="darkmode()">Toggle dark/white mode</button>
+</body>
+</html>
